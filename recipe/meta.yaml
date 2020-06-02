@@ -1,5 +1,5 @@
 {% set name = "w3lib" %}
-{% set version = "1.20.0" %}
+{% set version = "1.22.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e54db912ae1c79d3e246b16d3645bdf701f70ac4f8a2fc46eeb284cc02a31cd7
+  sha256: 0ad6d0203157d61149fd45aaed2e24f53902989c32fc1dccc2e2bfba371560df
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'This is a Python library of web-related functions'
+  summary: This is a Python library of web-related functions
 
   description: |
     This is a Python library of web-related functions, such as
