@@ -1,5 +1,5 @@
 {% set name = "w3lib" %}
-{% set version = "1.22.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0ad6d0203157d61149fd45aaed2e24f53902989c32fc1dccc2e2bfba371560df
+  sha256: 13df15f8c17b163de0fd5faa892c1ad143e190dfcbdb98534bb975eb37c6c7d6
 
 build:
   noarch: python
