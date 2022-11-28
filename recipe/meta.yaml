@@ -1,5 +1,5 @@
 {% set name = "w3lib" %}
-{% set version = "1.22.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0ad6d0203157d61149fd45aaed2e24f53902989c32fc1dccc2e2bfba371560df
+  sha256: 5e1b389406b1d23951e9db763be6324de4917ba1f6a8bf6e9036ed996dc15206
 
 build:
   noarch: python
@@ -16,16 +16,16 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
+    - python >=3.7
     - six
 
 test:
   imports:
     - w3lib
-    - w3lib.form
+
     - w3lib.html
     - w3lib.http
     - w3lib.url
