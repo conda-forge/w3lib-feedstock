@@ -25,7 +25,7 @@ requirements:
 test:
   imports:
     - w3lib
-    - w3lib.form
+
     - w3lib.html
     - w3lib.http
     - w3lib.url
