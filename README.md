@@ -1,11 +1,11 @@
-About w3lib
-===========
+About w3lib-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/w3lib-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/scrapy/w3lib/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/w3lib-feedstock/blob/main/LICENSE.txt)
 
 Summary: This is a Python library of web-related functions
 
