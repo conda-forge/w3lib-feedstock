@@ -53,31 +53,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `w3lib` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install w3lib
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install w3lib
 ```
 
-It is possible to list all of the versions of `w3lib` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add w3lib
+# for installing globally
+pixi global install w3lib
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `w3lib` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search w3lib --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search w3lib --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search w3lib --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -89,6 +131,8 @@ mamba repoquery whoneeds w3lib --channel conda-forge
 # List dependencies of `w3lib`:
 mamba repoquery depends w3lib --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
