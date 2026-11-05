@@ -1,5 +1,5 @@
 {% set name = "w3lib" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a7ddf714508ddc1b8563bd19ace2feb28080bbaca39326cbc964359f6754f615
+  sha256: 821f78cfdeb9e675c736ffe0b874bd1e50e9e02997e675ce046b373c009f27be
 
 build:
   noarch: python
