@@ -21,8 +21,10 @@ requirements:
     - python ${{ python_min }}.*
     - pip
     - hatchling
+    - frostwork >=0.2.2
   run:
     - python >=${{ python_min }}
+    - frostwork >=0.2.2
 
 tests:
   - python:
