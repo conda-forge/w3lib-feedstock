@@ -37,6 +37,18 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest
+        - hypothesis
+    files:
+      source:
+        - tests/
+    script:
+      # Need to do tests first, since they rely on util module giving
+      # a deprecation warning, which only happens on first import.
+      - pytest -vv --doctest-modules --pyargs tests w3lib
 
 about:
   license: BSD-3-Clause
