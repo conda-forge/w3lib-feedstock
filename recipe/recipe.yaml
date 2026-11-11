@@ -1,0 +1,72 @@
+schema_version: 1
+
+context:
+  version: "2.6.0"
+
+package:
+  name: w3lib
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/w/w3lib/w3lib-${{ version }}.tar.gz
+  sha256: 821f78cfdeb9e675c736ffe0b874bd1e50e9e02997e675ce046b373c009f27be
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling
+    - frostwork >=0.2.2
+  run:
+    - python >=${{ python_min }}
+    - frostwork >=0.2.2
+
+tests:
+  - python:
+      imports:
+        - w3lib
+        - w3lib.html
+        - w3lib.http
+        - w3lib.url
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest
+        - hypothesis
+    files:
+      source:
+        - tests/
+    script:
+      # Need to do tests first, since they rely on util module giving
+      # a deprecation warning, which only happens on first import.
+      - pytest -vv --doctest-modules --pyargs tests w3lib
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: This is a Python library of web-related functions
+  description: |
+    This is a Python library of web-related functions, such as
+    remove comments, or tags from HTML snippets,
+    extract base url from HTML snippets,
+    translate entites on HTML strings,
+    convert raw HTTP headers to dicts and vice-versa,
+    construct HTTP auth header,
+    converting HTML pages to unicode,
+    sanitize urls (like browsers do),
+    extract arguments from urls.
+  homepage: https://github.com/scrapy/w3lib/
+  repository: https://github.com/scrapy/w3lib
+
+extra:
+  recipe-maintainers:
+    - mgorny
