@@ -1,44 +1,45 @@
-{% set name = "w3lib" %}
-{% set version = "2.6.0" %}
+schema_version: 1
+
+context:
+  version: "2.6.0"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: w3lib
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/w/w3lib/w3lib-${{ version }}.tar.gz
   sha256: 821f78cfdeb9e675c736ffe0b874bd1e50e9e02997e675ce046b373c009f27be
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - hatchling
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
 
-test:
-  requires:
-    - python {{ python_min }}
-  imports:
-    - w3lib
-
-    - w3lib.html
-    - w3lib.http
-    - w3lib.url
+tests:
+  - python:
+      imports:
+        - w3lib
+        - w3lib.html
+        - w3lib.http
+        - w3lib.url
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
-  home: https://github.com/scrapy/w3lib/
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
   summary: This is a Python library of web-related functions
-
   description: |
     This is a Python library of web-related functions, such as
     remove comments, or tags from HTML snippets,
@@ -49,7 +50,8 @@ about:
     converting HTML pages to unicode,
     sanitize urls (like browsers do),
     extract arguments from urls.
-  dev_url: https://github.com/scrapy/w3lib
+  homepage: https://github.com/scrapy/w3lib/
+  repository: https://github.com/scrapy/w3lib
 
 extra:
   recipe-maintainers:
