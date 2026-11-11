@@ -21,7 +21,6 @@ converting HTML pages to unicode,
 sanitize urls (like browsers do),
 extract arguments from urls.
 
-
 Current build status
 ====================
 
